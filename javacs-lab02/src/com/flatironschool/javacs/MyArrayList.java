@@ -123,17 +123,10 @@ public class MyArrayList<E> implements List<E> {
 	@Override
 	public int indexOf(Object target) {
 		// TODO: fill in this method
-		if (target == null) {
-			for (int i = 0; i < size; i++) {
-				if (get(i) == null) {
-					return i;
-				}
-			}
-		} else {
-			for (int i = 0; i < size; i++) {
-				if (target.equals(get(i))) {
-					return i;
-				}
+		
+		for (int i = 0; i < size; i++) {
+			if (equals(target, get(i))) {
+				return i;
 			}
 		}
 		return -1;
